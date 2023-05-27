@@ -8,3 +8,6 @@ How to run the app:
 5. Open 'localhost:8081' on browser.
 
 Challenges during development:
+1. Creating routes for each functionality as it is case-sensitive and with just one mistake, everything can be affected.
+2. Trying to follow a template is also challenging because there are a lot of exports involved.
+3. Naming variables is quite confusing also.
