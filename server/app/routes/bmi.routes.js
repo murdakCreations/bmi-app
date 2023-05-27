@@ -1,8 +1,13 @@
-module.exports = app => {
-    const bmi = require("../controllers/bmi.controller.js");
+module.exports = app =>  {
+    const studentBMI = require("../controllers/bmi.controller.js")
 
     var router = require("express").Router()
 
-    // Create new Student BMI
-    router.post("/", bmi.create)
+    // Create a new Student Data
+    router.post("/", studentBMI.create)
+
+    // Retrieve all studentBMI
+    router.get("/", studentBMI.findAll)
+
+    app.use('/api/studentBMI', router)
 }
