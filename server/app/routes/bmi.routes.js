@@ -15,5 +15,8 @@ module.exports = app =>  {
     // Update a Student with id
     router.put("/:studentID", studentBMI.update)
 
+    // Delete a Student with id
+    router.delete("/:studentID", studentBMI.delete)
+
     app.use('/api/studentBMI', router)
 }

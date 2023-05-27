@@ -96,3 +96,28 @@ exports.update = (req, res) => {
             })
         })
 }
+
+// Delete a StudentBmis with the specified id in the request
+exports.delete = (req, res) => {
+    const id = req.params.studentID
+
+    StudentBmis.destroy({
+        where: {studentID: id}
+    })
+        .then(num => {
+            if(num == 1) {
+                res.send({
+                    message: "StudentBmis was deleted successfully!"
+                })
+            } else {
+                res.send({
+                    message: `Cannot delete StudentBmis with id=${id}. Maybe StudentBmis was not found!`
+                })
+            }
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: "Could not delete StudentBmis with id=" + id
+            })
+        })
+}
