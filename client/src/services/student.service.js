@@ -17,6 +17,14 @@ class StudentBMIDataService {
         return http.put(`/studentBMI/${studentID}`, data)
     }
 
+    delete(studentID) {
+        return http.delete(`/studentBMI/${studentID}`)
+    }
+
+    deleteAll() {
+        return http.delete(`/studentBMI`)
+    }
+
 }
 
 export default new StudentBMIDataService()
