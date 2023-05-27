@@ -9,5 +9,9 @@ module.exports = app =>  {
     // Retrieve all studentBMI
     router.get("/", studentBMI.findAll)
 
+    // Retrieve a single Student Data with id
+    router.get("/:studentID", studentBMI.findOne)
+
+
     app.use('/api/studentBMI', router)
 }

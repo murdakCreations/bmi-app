@@ -50,3 +50,24 @@ exports.findAll = (req, res) => {
             })
         })
 }
+
+// Find a single StudentBmis with an id
+exports.findOne = (req, res) => {
+    const id = req.params.studentID
+
+    StudentBmis.findOne({where: {studentID: id}})
+        .then(data => {
+            if (data) {
+                res.send(data)
+            } else {
+                res.status(400).send({
+                    message: `Cannot find StudentBmis with id=${id}`
+                })
+            }
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: "Error retrieving StudentBmis with id=" + id
+            })
+        })
+}
