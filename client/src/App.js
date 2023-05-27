@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { Route, Routes, Link } from "react-router-dom"
 import "./App.css"
 
-//import AddStudentBMI from "./components/add-student.component"
+import AddStudentBMI from "./components/add-student.component"
 //import StudentBMI from "./components/student.component"
 import StudentBMIList from "./components/students-list.component"
 
@@ -32,6 +32,7 @@ export default class App extends Component {
           <Routes>
             <Route path="/" element={<StudentBMIList/>}/>
             <Route path="/studentBmis" element={<StudentBMIList/>}/>
+            <Route path="/add" element={<AddStudentBMI/>}/>
           </Routes>
         </div>
       </div>
