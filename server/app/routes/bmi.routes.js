@@ -12,6 +12,8 @@ module.exports = app =>  {
     // Retrieve a single Student Data with id
     router.get("/:studentID", studentBMI.findOne)
 
+    // Update a Student with id
+    router.put("/:studentID", studentBMI.update)
 
     app.use('/api/studentBMI', router)
 }

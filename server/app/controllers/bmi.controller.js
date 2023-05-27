@@ -71,3 +71,28 @@ exports.findOne = (req, res) => {
             })
         })
 }
+
+// Update a StudentBmis by the id in the request
+exports.update = (req, res) => {
+    const id = req.params.studentID
+
+    StudentBmis.update(req.body, {
+        where: {studentID: id}
+    })
+        .then(num => {
+            if(num == 1) {
+                res.send({
+                    message: "StudentBmis was updated successfully"
+                })
+            } else {
+                res.send({
+                    message: `Cannot update StudentBmis with id=${id}. Maybe StudentBmis was not found or req.body is empty!`
+                })
+            }
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: "Error updating StudentBmis with id=" + id
+            })
+        })
+}
