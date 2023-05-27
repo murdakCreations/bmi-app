@@ -18,5 +18,8 @@ module.exports = app =>  {
     // Delete a Student with id
     router.delete("/:studentID", studentBMI.delete)
 
+    // Delete all studentBMI
+    router.delete("/", studentBMI.deleteAll)
+
     app.use('/api/studentBMI', router)
 }

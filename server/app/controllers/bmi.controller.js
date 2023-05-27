@@ -121,3 +121,20 @@ exports.delete = (req, res) => {
             })
         })
 }
+
+// Delete all StudentBmiss from the database
+exports.deleteAll = (req, res) => {
+    StudentBmis.destroy({
+        where: {},
+        truncate: false
+    })
+        .then(nums => {
+            res.send({message: `${nums} StudentBmiss were deleted successfully`})
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occured while removing all StudentBmiss"
+            })
+        })
+}
